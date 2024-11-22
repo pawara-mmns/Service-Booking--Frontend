@@ -1,0 +1,156 @@
+/* signup.component.scss */
+.container {
+    display: flex;
+    height: calc(100vh - 64px); 
+    background-color: #f5f7f9;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden; 
+  }
+  
+  // Left Section
+  .image-section {
+    display: none;
+    position: relative;
+    width: 50%;
+    background: url('../../../../assets/pexels-tima-miroshnichenko-6873181.jpg') center/cover;
+    
+    @media (min-width: 1024px) {
+      display: block;
+    }
+  }
+  
+  .image-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(37, 99, 235, 0.3);
+  }
+  
+  .image-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 3rem;
+    color: white;
+    
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    p {
+      font-size: 1.125rem;
+      opacity: 0.9;
+    }
+  }
+  
+  // Right Section
+  .form-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    overflow-y: auto; /* Allows scrolling if content is too tall */
+  }
+  
+  .form-card {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 28rem;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 2rem;
+    
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 0.5rem;
+    }
+    
+    p {
+      color: #6b7280;
+      font-size: 1rem;
+    }
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    
+    button {
+      width: 100%;
+      padding: 0.875rem;
+      border-radius: 0.375rem;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+      
+      &.btn-primary {
+        background-color: #2563eb;
+        color: white;
+        
+        &:hover {
+          background-color: #1d4ed8;
+        }
+      }
+      
+      &.btn-secondary {
+        background-color: #1f2937;
+        color: white;
+        
+        &:hover {
+          background-color: #111827;
+        }
+      }
+    }
+  }
+  
+  .signin-link {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #6b7280;
+    
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      
+      &:hover {
+        color: #1d4ed8;
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  // Responsive Design
+  @media (max-width: 1023px) {
+    .form-section {
+      padding: 1.5rem;
+    }
+    
+    .form-card {
+      padding: 2rem;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .form-card {
+      padding: 1.5rem;
+    }
+    
+    .header h1 {
+      font-size: 1.25rem;
+    }
+  }

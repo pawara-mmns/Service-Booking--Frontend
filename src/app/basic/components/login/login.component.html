@@ -1,1 +1,47 @@
-<p>login works!</p>
+<div class="bg">
+    <div class="login-container">
+        <!-- Left side - Login Form -->
+        <div class="login-section">
+            <div class="login-content">
+                <div nz-row class="imgDiv">
+                    <div nz-col nzSpan="24">
+                        <h1>Welcome Back</h1>
+                        <p class="subtitle">Please login to your account</p>
+                    </div>
+                </div>
+
+                <form nz-from [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+                    <nz-form-item>
+                        <nz-form-control nzErrorTip="Please input your email">
+                            <nz-input-group nzPrefixIcon="user">
+                                <input type="text" nz-input formControlName="userName" placeholder="Email"/>
+                            </nz-input-group>
+                        </nz-form-control>
+                    </nz-form-item>
+
+                    <nz-form-item>
+                        <nz-form-control nzErrorTip="Please input your Password!">
+                            <nz-input-group nzPrefixIcon="lock">
+                                <input type="password" nz-input formControlName="password" placeholder="Password"/>
+                            </nz-input-group>
+                        </nz-form-control>
+                    </nz-form-item>
+
+                    <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
+                    <div class="register-link">
+                        Don't have an account? <a routerLink="/register">Register now!</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right side - Image -->
+        <div class="image-section">
+            <div class="overlay"></div>
+            <div class="image-content">
+                <h2>Welcome to Our Platform</h2>
+                <p>Experience the next generation of secure and efficient services.</p>
+            </div>
+        </div>
+    </div>
+</div>
