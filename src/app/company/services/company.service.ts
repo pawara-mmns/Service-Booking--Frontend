@@ -37,6 +37,13 @@ export class CompanyService {
     })
   }
 
+  deletedAd(adId:any): Observable<any>{
+    return this.http.delete(BASIC_URL + `api/company/ad/${adId}`, {
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
+
   createAuthorizationHeader(): HttpHeaders {
     let authHeaders: HttpHeaders = new HttpHeaders();
     return authHeaders.set(

@@ -60,9 +60,7 @@ adId:any = this.activatedroute.snapshot.params['id'];
       const formData: FormData = new FormData();
       if(this.imgChanged && this.selectedFile){
         formData.append('img', this.selectedFile);
-
       }
-      
       formData.append('serviceName', this.validateForm.get('serviceName').value);
       formData.append('description', this.validateForm.get('description').value);
       formData.append('price', this.validateForm.get('price').value);
