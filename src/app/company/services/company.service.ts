@@ -15,20 +15,26 @@ export class CompanyService {
     const userId = UserStorageService.getUserId();
     return this.http.post(BASIC_URL + `api/company/ad/${userId}`, adDTO, {
       headers: this.createAuthorizationHeader(),
-    });
+    })
   }
     
   getAllAdsByUserId(): Observable<any> {
     const userId = UserStorageService.getUserId();
     return this.http.get(BASIC_URL + `api/company/ads/${userId}`,  {
       headers: this.createAuthorizationHeader(),
-    });
+    })
   }
 
   getAdById(adId:any): Observable<any> {
     return this.http.get(BASIC_URL + `api/company/ad/${adId}`,  {
       headers: this.createAuthorizationHeader(),
-    });
+    })
+  }
+
+  updateAd(adId:any, adDTO:any): Observable<any>{
+    return this.http.put(BASIC_URL + `api/company/ad/${adId}`, adDTO, {
+      headers: this.createAuthorizationHeader(),
+    })
   }
 
   createAuthorizationHeader(): HttpHeaders {
@@ -36,6 +42,6 @@ export class CompanyService {
     return authHeaders.set(
       'Authorization',
       'Bearer ' + UserStorageService.getToken()
-    );
+    )
   }
 }
